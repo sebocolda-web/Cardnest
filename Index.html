@@ -1,1 +1,311 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CardNest – Pokémon Karten Ankauf</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b1020;
+  color: white;
+}
+
+header {
+  padding: 25px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #ffd84d;
+}
+
+nav a {
+  color: #aaa;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.hero {
+  padding: 80px 7%;
+  text-align: center;
+}
+
+.badge {
+  color: #ffd84d;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 55px;
+  margin: 20px 0;
+}
+
+.hero p {
+  color: #adb5c9;
+  font-size: 19px;
+  max-width: 650px;
+  margin: auto;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 25px;
+  background: #ffd84d;
+  color: #111;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+section {
+  padding: 60px 7%;
+}
+
+h2 {
+  font-size: 35px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+.box {
+  background: #121a30;
+  border: 1px solid #29334d;
+  padding: 25px;
+  border-radius: 18px;
+}
+
+.box p {
+  color: #adb5c9;
+}
+
+form {
+  max-width: 700px;
+  background: #121a30;
+  padding: 30px;
+  border-radius: 18px;
+  border: 1px solid #29334d;
+}
+
+label {
+  display: block;
+  margin-top: 18px;
+  font-weight: bold;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 13px;
+  margin-top: 8px;
+  border-radius: 10px;
+  border: 1px solid #29334d;
+  background: #0b1020;
+  color: white;
+}
+
+textarea {
+  height: 120px;
+}
+
+button {
+  margin-top: 25px;
+  width: 100%;
+  padding: 15px;
+  border: 0;
+  border-radius: 10px;
+  background: #ffd84d;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+footer {
+  padding: 40px 7%;
+  color: #999;
+  border-top: 1px solid #29334d;
+}
+
+@media(max-width:700px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    display: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Card<span>Nest</span></div>
+
+  <nav>
+    <a href="#ablauf">Ablauf</a>
+    <a href="#ankauf">Ankauf</a>
+  </nav>
+</header>
+
+<section class="hero">
+
+  <div class="badge">POKÉMON KARTEN ANKAUF</div>
+
+  <h1>
+    Deine Karten.<br>
+    <span style="color:#ffd84d">Unser Angebot.</span>
+  </h1>
+
+  <p>
+    Du möchtest deine Pokémon-Karten verkaufen?
+    Schick uns deine Sammlung und erhalte nach Prüfung
+    ein individuelles Ankaufangebot.
+  </p>
+
+  <a class="button" href="#ankauf">
+    Ankauf anfragen
+  </a>
+
+</section>
+
+<section id="ablauf">
+
+  <h2>So funktioniert der Ankauf</h2>
+
+  <div class="grid">
+
+    <div class="box">
+      <h3>01 – Anfrage</h3>
+      <p>
+        Beschreibe deine Sammlung und sende uns
+        Informationen zu deinen Karten.
+      </p>
+    </div>
+
+    <div class="box">
+      <h3>02 – Prüfung</h3>
+      <p>
+        Wir prüfen Zustand, Set, Sprache und
+        mögliche wertvolle Karten.
+      </p>
+    </div>
+
+    <div class="box">
+      <h3>03 – Angebot</h3>
+      <p>
+        Du bekommst ein individuelles Angebot
+        und entscheidest selbst, ob du es annimmst.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="ankauf">
+
+  <h2>Ankauf anfragen</h2>
+
+  <p>
+    Fülle das Formular aus und beschreibe deine Karten.
+  </p>
+
+  <form action="mailto:test@gmail.com" method="post">
+
+    <label>Name *</label>
+    <input type="text" name="Name" required>
+
+    <label>E-Mail *</label>
+    <input type="email" name="Email" required>
+
+    <label>Anzahl der Karten</label>
+    <input type="number" name="Karten">
+
+    <label>Was möchtest du verkaufen?</label>
+
+    <select name="Art">
+      <option>Einzelkarten</option>
+      <option>Sammlung</option>
+      <option>Booster / ETBs</option>
+      <option>Gemischt</option>
+    </select>
+
+    <label>Weitere Informationen</label>
+
+    <textarea
+      name="Nachricht"
+      placeholder="Zum Beispiel Sets, besondere Karten, Zustand usw."
+    ></textarea>
+
+    <button type="submit">
+      Ankauf anfragen
+    </button>
+
+  </form>
+
+</section>
+
+<section>
+
+  <h2>Versand</h2>
+
+  <div class="box">
+
+    <p>
+      Du möchtest deine Karten per Post schicken?
+      Kontaktiere uns zuerst per E-Mail.
+      Die genaue Versandadresse erhältst du nach
+      vorheriger Absprache.
+    </p>
+
+    <p>
+      📍 Mülheim an der Ruhr
+    </p>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <strong>CardNest – Pokémon Karten Ankauf</strong>
+
+  <p>
+    Kontakt:
+    <a href="mailto:test@gmail.com">
+      test@gmail.com
+    </a>
+  </p>
+
+  <small>
+    Impressum und Datenschutzerklärung müssen vor
+    dem öffentlichen Betrieb ergänzt werden.
+  </small>
+
+</footer>
+
+</body>
+</html>
 
